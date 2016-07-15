@@ -66,6 +66,11 @@ var getAccessToken = function(query) {
 };
 
 var getIdentity = function(accessToken) {
+    var config = ServiceConfiguration.configurations.findOne({
+        service: 'ghe'
+    });
+    if (!config)
+        throw new ServiceConfiguration.ConfigError();
     try {
         return HTTP.get(
             'https://' + config.gheAPI + '/user', {
@@ -84,6 +89,11 @@ var getIdentity = function(accessToken) {
 };
 
 var getEmails = function(accessToken) {
+    var config = ServiceConfiguration.configurations.findOne({
+        service: 'ghe'
+    });
+    if (!config)
+        throw new ServiceConfiguration.ConfigError();
     try {
         return HTTP.get(
             'https://' + config.gheAPI + '/user/emails', {
