@@ -1,7 +1,7 @@
 Package.describe({
     summary: 'Github Enterprise OAuth flow',
     version: '2.0.5',
-    name: 'dstrat28:accounts-ghe',
+    name: 'ibmcloud:accounts-ghe',
     documentation: null
 });
 
